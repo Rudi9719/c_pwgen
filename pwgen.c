@@ -1,13 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <unistd.h> 
 
 void randPin(char*);
 void passGen(char*);
 int charToInt(char*);
 
 int main(int argc, char *argv[]) {
-  srand(getpid() * time(NULL) * clock());
+  srand(time(NULL) * COMP_TIME * getpid());
   if (argc < 2) {
     printf("Usage: pwgen $length $numericOnly\n");
     return 0;

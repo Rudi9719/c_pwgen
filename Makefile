@@ -1,5 +1,8 @@
 CC=gcc
-CFLAGS=-I.
+CFLAGS = -g -Wall
+make: 
+	$(CC) $(CFLAGS) -DCOMP_TIME=$$(date +%s) -o pwgen pwgen.c
 
-make: pwgen.o
-	$(CC) -o pwgen pwgen.o
+.PHONY: clean
+clean:
+	rm -f pwgen *.o
