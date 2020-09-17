@@ -29,7 +29,7 @@ void randPin(char *input) {
 void passGen(char *input) {
   int length = charToInt(input);
   for (int i = 0; i < length; i++) {
-    printf("%c", (rand() % (97 - 125 + 1)) + 97);
+    printf("%c", (rand() % (48 - 125 + 1)) + 48);
   }
 }
 int charToInt(char *input) {
